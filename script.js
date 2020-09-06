@@ -4,14 +4,19 @@ const hoursEl = document.getElementById('hours');
 const minutesEl = document.getElementById('minutes');
 const secondsEl = document.getElementById('seconds');
 
-// new targeted year
-const newYears = '1 Jannuary 2021';
-
 // function to calculate countdown
 function countdown() {
-    const newYearsDate = new Date(newYears);
-    const currentDate = new Date();
+    // *** new targeted year manually ***
+    // const newYears = '1 Jannuary 2021';
+    // const newYearsDate = new Date(newYears);
+    // const currentDate = new Date();
 
+    // get new year dynamically
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const newYearsDate = new Date( (currentYear + 1), 0, 1 );
+
+    
     const totalSeconds = (newYearsDate - currentDate) / 1000;
 
     const days = Math.floor(totalSeconds / 3600 / 24);
