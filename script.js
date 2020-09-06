@@ -1,11 +1,11 @@
 // select all DOM ids
-let daysEl = document.getElementById('days');
-let hoursEl = document.getElementById('hours');
-let minutesEl = document.getElementById('minutes');
-let secondsEl = document.getElementById('seconds');
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minutesEl = document.getElementById('minutes');
+const secondsEl = document.getElementById('seconds');
 
 // new targeted year
-const newYears = 'First January 2021';
+const newYears = '1 Jannuary 2021';
 
 // function to calculate countdown
 function countdown() {
@@ -20,13 +20,13 @@ function countdown() {
     const seconds = Math.floor(totalSeconds) % 60;
 
     // populates in pages with calculated values
-    daysEl.innerHTML = days;
-    hoursEl.innerHTML = hours;
-    minutesEl.innerHTML = minutes;
-    secondsEl.innerHTML = seconds;
+    daysEl.innerHTML = formatTime(days);
+    hoursEl.innerHTML = formatTime(hours);
+    minutesEl.innerHTML = formatTime(minutes);
+    secondsEl.innerHTML = formatTime(seconds);
 }
 
-// show 0 in the from when time is less then 0
+// show 0 in the front when time is less then 0
 function formatTime(time){
     return time < 10 ? (`0${time}`) : time;
 }
